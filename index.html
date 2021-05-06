@@ -49,6 +49,7 @@
         console.log('data数据',data)
         var gps = [116.3, 39.9];
         AMap.convertFrom(gps, 'gps', function (status, result) {
+              console.log('result',result)
           if (result.info === 'ok') {
               console.log('位置',result)
             //var lnglats = result.locations; // Array.<LngLat>
