@@ -47,6 +47,16 @@
     //解析定位结果
     function onComplete(data) {
         console.log('data数据',data)
+        var gps = [116.3, 39.9];
+        AMap.convertFrom(gps, 'gps', function (status, result) {
+          if (result.info === 'ok') {
+              console.log('位置',result)
+            //var lnglats = result.locations; // Array.<LngLat>
+          }
+        });
+        
+        
+        
         document.getElementById('status').innerHTML='定位成功'
         var str = [];
         str.push('定位结果：' + data.position);
