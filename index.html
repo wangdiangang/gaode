@@ -47,7 +47,7 @@
     //解析定位结果
     function onComplete(data) {
         console.log('data数据',data)
-        var gps = [116.3, 39.9];
+        var gps = [data.position.R, data.position.lat];
         AMap.convertFrom(gps, 'gps', function (status, result) {
               console.log('result',result)
           if (result.info === 'ok') {
