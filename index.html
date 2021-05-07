@@ -48,7 +48,7 @@
     function onComplete(data) {
         console.log('data数据',data)
         var gps = [data.position.R, data.position.lat];
-         map.getAddress(gps, function(status, result) {
+         geolocation.getAddress(gps, function(status, result) {
              console.log('result========',result)
             if (status === 'complete' && result.info === 'OK') {
                 // result为对应的地理位置详细信息
