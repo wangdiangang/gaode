@@ -45,11 +45,12 @@
                 zoomToAccuracy: true,   //定位成功后是否自动调整地图视野到定位点
 
             });
+             var geocoder = new AMap.Geocoder({});
             map.addControl(geolocation);
             geolocation.getCurrentPosition(function (status, result) {
                 if (status == 'complete') {
                     var gps = [result.position.R, result.position.lat];
-                    geolocation.getAddress(gps, function (status, result) {
+                    geocoder.getAddress(gps, function (status, result) {
                         console.log('result========', result)
                         if (status === 'complete' && result.info === 'OK') {
                             // result为对应的地理位置详细信息
