@@ -50,12 +50,12 @@
             geolocation.getCurrentPosition(function (status, result) {
                 if (status == 'complete') {
                     var gps = [result.position.R, result.position.lat];
-                    geocoder.getAddress(gps, function (status, result) {
-                        console.log('result========', result)
-                        if (status === 'complete' && result.info === 'OK') {
-                            // result为对应的地理位置详细信息
-                        }
-                    })
+//                     geocoder.getAddress(gps, function (status, result) {
+//                         console.log('result========', result)
+//                         if (status === 'complete' && result.info === 'OK') {
+//                             // result为对应的地理位置详细信息
+//                         }
+//                     })
                     onComplete(result)
                 } else {
                     onError(result)
