@@ -34,10 +34,10 @@
         var map = new AMap.Map('container', {
             resizeEnable: true
         });
-       
+
         AMap.plugin('AMap.Geolocation', function () {
             var geolocation = new AMap.Geolocation({
-               
+
                 enableHighAccuracy: true,//是否使用高精度定位，默认:true
                 timeout: 10000,          //超过10秒后停止定位，默认：5s
                 buttonPosition: 'RB',    //定位按钮的停靠位置
@@ -45,17 +45,10 @@
                 zoomToAccuracy: true,   //定位成功后是否自动调整地图视野到定位点
 
             });
-             var geocoder = new AMap.Geocoder({});
             map.addControl(geolocation);
             geolocation.getCurrentPosition(function (status, result) {
+                console.log('result==========',result);
                 if (status == 'complete') {
-//                     var gps = [result.position.R, result.position.lat];
-//                     geocoder.getAddress(gps, function (status, result) {
-//                         console.log('result========', result)
-//                         if (status === 'complete' && result.info === 'OK') {
-//                             // result为对应的地理位置详细信息
-//                         }
-//                     })
                     onComplete(result)
                 } else {
                     onError(result)
@@ -65,10 +58,6 @@
         //解析定位结果
         function onComplete(data) {
             console.log('data数据', data)
-          
-
-
-
             document.getElementById('status').innerHTML = '定位成功'
             var str = [];
             str.push('定位结果：' + data.position);
