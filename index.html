@@ -64,7 +64,7 @@
             str.push('定位结果：' + data.position);
             str.push('定位类别：' + data.location_type);
              let {building,country,district,street,streetNumber,township} =data.addressComponent
-            str.push('位置',building,'--',country,'--',district,'--',street,'--',streetNumber,'--',township)
+            str.push('位置',building,'||',country,'||',district,'||',street,'||',streetNumber,'||',township)
             if (data.accuracy) {
                 str.push('精度：' + data.accuracy + ' 米');
 
